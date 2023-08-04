@@ -1,0 +1,22 @@
+--- /usr/share/awesome/lib/awful/widget/taglist.lua	2021-09-14 21:42:54.000000000 +0200
++++ Downloads/taglist.lua	2022-03-21 11:07:33.982211037 +0100
+@@ -322,6 +322,7 @@
+     local fg_volatile = args.fg_volatile or theme.taglist_fg_volatile
+     local taglist_squares_sel = args.squares_sel or theme.taglist_squares_sel
+     local taglist_squares_unsel = args.squares_unsel or theme.taglist_squares_unsel
++    local taglist_squares_urgent = args.squares_urgent or theme.taglist_squares_urgent
+     local taglist_squares_sel_empty = args.squares_sel_empty or theme.taglist_squares_sel_empty
+     local taglist_squares_unsel_empty = args.squares_unsel_empty or theme.taglist_squares_unsel_empty
+     local taglist_squares_resize = theme.taglist_squares_resize or args.squares_resize or "true"
+@@ -358,7 +359,10 @@
+         bg_resize = taglist_squares_resize == "true"
+     elseif not is_selected then
+         if #cls > 0 then
+-            if taglist_squares_unsel then
++            if tag.getproperty(t, "urgent") and taglist_squares_urgent then
++                bg_image = taglist_squares_urgent
++                bg_resize = taglist_squares_resize == "true"
++            elseif taglist_squares_unsel then
+                 bg_image = taglist_squares_unsel
+                 bg_resize = taglist_squares_resize == "true"
+             end

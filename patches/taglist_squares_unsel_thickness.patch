@@ -1,0 +1,11 @@
+--- patches/theme_assets.lua	2021-12-20 06:58:37.233741815 +0100
++++ /usr/share/awesome/lib/beautiful/theme_assets.lua	2021-09-14 21:42:54.000000000 +0200
+@@ -35,7 +35,7 @@
+     local img = cairo.ImageSurface(cairo.Format.ARGB32, size, size)
+     local cr = cairo.Context(img)
+     cr:set_source(gears_color(fg))
++    cr:set_line_width(size/2)
+-    cr:set_line_width(size/4)
+     cr:rectangle(0, 0, size, size)
+     cr:stroke()
+     return img
