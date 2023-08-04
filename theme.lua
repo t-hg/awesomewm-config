@@ -5,9 +5,9 @@ local theme_name = "default"
 local theme = gears.filesystem.get_configuration_dir() .. "themes/" .. theme_name .. "/theme.lua"
 
 local function init()
-	beautiful.init(theme)
+  beautiful.init(theme)
 end
 
 return {
-	init = init,
+  init = init,
 }
