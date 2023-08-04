@@ -1,8 +1,3 @@
--- redefine global variables
--- to statisfy linter
-client = client
-mouse = mouse
-
 local awful = require("awful")
 local beautiful = require("beautiful")
 local gears = require("gears")

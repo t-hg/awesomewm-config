@@ -1,7 +1,3 @@
--- redefine global variables
--- to satisfy linter
-awesome = awesome
-
 local naughty = require("naughty")
 
 local function init()

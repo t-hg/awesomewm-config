@@ -60,7 +60,7 @@ local function init()
 	end)
 
 	client.connect_signal("property::geometry", function(client)
-		client.floating_geometry = client.geometry
+		client.floating_geometry = geometry
 	end)
 end
 
