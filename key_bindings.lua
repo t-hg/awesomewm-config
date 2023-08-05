@@ -18,7 +18,7 @@ local function launcher()
     terminal_emulator,
   })
 
-  require("naughty").notify(command)
+  require("naughty").notify({text=tostring(command)})
   awful.spawn(command, false)
 end
 
