@@ -1,6 +1,6 @@
 local beautiful = require("beautiful")
 
-local accent_color = "#9580FF"
+local accent_color = "#383A59"
 local bg_normal = "#282C34"
 local fg_normal = "#F8F8F2"
 
