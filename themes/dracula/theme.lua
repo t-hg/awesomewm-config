@@ -9,7 +9,8 @@ local taglist_squares_sel = beautiful.theme_assets.taglist_squares_sel(taglist_s
 local taglist_squares_unsel = beautiful.theme_assets.taglist_squares_unsel(taglist_square_size, fg_normal)
 local taglist_squares_urgent = beautiful.theme_assets.taglist_squares_sel(taglist_square_size, bg_normal)
 
-local font = "Iosevka Nerd Font Mono 12"
+local font = "Iosevka Nerd Font Mono"
+local font_size = 12
 
 return {
   bg_focus = accent_color,
@@ -18,11 +19,11 @@ return {
   border_focus = accent_color,
   border_normal = bg_normal,
   border_width = 2,
-  dmenu_params = { "-p", "Run:", "-fn", font, "-sb", accent_color },
+  dmenu_params = { "-p", "Run:", "-fn", font .. ":" .. font_size, "-sb", accent_color },
   fg_focus = fg_normal,
   fg_normal = fg_normal,
   fg_urgent = bg_normal,
-  font = font,
+  font = font .. " " .. font_size,
   panel_height = 24,
   taglist_squares_sel = taglist_squares_sel,
   taglist_squares_unsel = taglist_squares_unsel,
