@@ -4,10 +4,21 @@ local gears = require("gears")
 local tags = require("tags")
 local panel = require("panel")
 
+local terminal_emulator = "alacritty"
+
 local function launcher()
   local screen = mouse.screen.index - 1
-  local dmenu = gears.table.join({ "j4-dmenu-desktop", "-m", tostring(screen) }, beautiful.dmenu_params)
-  awful.spawn(dmenu, false)
+  local dmenu = gears.table.join({ "dmenu", "-m", tostring(screen) }, beautiful.dmenu_params)
+
+  local command = gears.table.join({
+    "j4-dmenu-desktop",
+    "--dmenu",
+    table.concat(dmenu, " "),
+    "--term",
+    terminal_emulator,
+  })
+
+  awful.spawn(command, false)
 end
 
 local function focus_previous_client()
@@ -110,7 +121,7 @@ local global_key_bindings = gears.table.join(
   end),
   awful.key({ "Mod1" }, "space", launcher),
   awful.key({ "Mod1" }, "Return", function()
-    awful.spawn("alacritty", false)
+    awful.spawn(terminal_emulator, false)
   end),
   awful.key({ "Mod1" }, "i", function()
     awful.tag.incnmaster(1, nil, true)
