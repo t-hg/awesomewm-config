@@ -19,7 +19,7 @@ return {
   border_focus = accent_color,
   border_normal = bg_normal,
   border_width = 2,
-  dmenu_params = { "-p", "Run:", "-fn", font .. ":" .. font_size, "-sb", accent_color },
+  dmenu_params = { "-p", "Run:", "-fn", "'" .. font .. ":" .. font_size .. "'", "-sb", "'" .. accent_color .. "'" },
   fg_focus = fg_normal,
   fg_normal = fg_normal,
   fg_urgent = bg_normal,
