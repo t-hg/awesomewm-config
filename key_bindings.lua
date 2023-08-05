@@ -6,7 +6,7 @@ local panel = require("panel")
 
 local function launcher()
   local screen = mouse.screen.index - 1
-  local dmenu = gears.table.join({ "dmenu_run", "-m", tostring(screen) }, beautiful.dmenu_params)
+  local dmenu = gears.table.join({ "j4-dmenu-desktop", "-m", tostring(screen) }, beautiful.dmenu_params)
   awful.spawn(dmenu, false)
 end
 

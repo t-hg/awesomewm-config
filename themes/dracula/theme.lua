@@ -24,7 +24,7 @@ return {
   fg_normal = fg_normal,
   fg_urgent = bg_normal,
   font = font .. " " .. font_size,
-  panel_height = 24,
+  panel_height = 23,
   taglist_squares_sel = taglist_squares_sel,
   taglist_squares_unsel = taglist_squares_unsel,
   taglist_squares_urgent = taglist_squares_urgent,
