@@ -18,6 +18,7 @@ local function launcher()
     terminal_emulator,
   })
 
+  require("naughty").notify(command)
   awful.spawn(command, false)
 end
 
