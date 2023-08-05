@@ -191,7 +191,7 @@ for i = 1, tags.size() do
 end
 
 local client_key_bindings = gears.table.join(
-  awful.key({ "Mod1" }, "q", function(client)
+  awful.key({ "Mod1", "Shift" }, "q", function(client)
     client:kill()
   end),
   awful.key({ "Mod1", "Shift" }, ".", function(client)
