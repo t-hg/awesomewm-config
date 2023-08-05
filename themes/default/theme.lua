@@ -1,8 +1,8 @@
 local beautiful = require("beautiful")
 
-local accent_color = "#005577"
-local bg_normal = "#222222"
-local fg_normal = "#bbbbbb"
+local accent_color = "#44475A"
+local bg_normal = "#282C34"
+local fg_normal = "#F8F8F2"
 
 local taglist_square_size = beautiful.xresources.apply_dpi(5)
 local taglist_squares_sel = beautiful.theme_assets.taglist_squares_sel(taglist_square_size, fg_normal)
@@ -14,11 +14,11 @@ return {
   bg_normal = bg_normal,
   bg_urgent = fg_normal,
   border_focus = accent_color,
-  border_normal = "#444444",
+  border_normal = bg_normal,
   border_width = 2,
   dmenu_params = { "-p", "Run:" },
-  fg_focus = "#eeeeee",
-  fg_normal = "#bbbbbb",
+  fg_focus = accent_color,
+  fg_normal = fg_normal,
   fg_urgent = bg_normal,
   font = "Iosevka Nerd Font Mono 12",
   panel_height = 24,
