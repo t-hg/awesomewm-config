@@ -17,7 +17,7 @@ return {
   border_normal = bg_normal,
   border_width = 2,
   dmenu_params = { "-p", "Run:" },
-  fg_focus = accent_color,
+  fg_focus = fg_normal,
   fg_normal = fg_normal,
   fg_urgent = bg_normal,
   font = "Iosevka Nerd Font Mono 12",
