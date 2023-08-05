@@ -19,7 +19,7 @@ local general_rule = {
     raise = true,
     screen = awful.screen.preferred,
     size_hints_honor = false,
-    floating = true,
+    floating = false,
   },
 }
 
