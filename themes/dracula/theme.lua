@@ -1,6 +1,6 @@
 local beautiful = require("beautiful")
 
-local accent_color = "#383a59"
+local accent_color = "#9580FF"
 local bg_normal = "#282C34"
 local fg_normal = "#F8F8F2"
 
@@ -14,7 +14,7 @@ return {
   bg_normal = bg_normal,
   bg_urgent = fg_normal,
   border_focus = accent_color,
-  border_normal = "#44475A",
+  border_normal = bg_normal,
   border_width = 2,
   dmenu_params = { "-p", "Run:" },
   fg_focus = fg_normal,
