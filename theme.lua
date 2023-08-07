@@ -4,7 +4,7 @@ local beautiful = require("beautiful")
 local theme_name = "dracula"
 local theme = gears.filesystem.get_configuration_dir() .. "themes/" .. theme_name .. "/theme.lua"
 
-local wallpaper = "~/Pictures/wallpaper.jpg"
+local wallpaper = os.getenv("HOME") .. "/Pictures/wallpaper.jpg"
 
 local function init()
   beautiful.init(theme)
