@@ -23,12 +23,22 @@ local general_rule = {
   },
 }
 
+local dialog_rule = {
+  rule = {
+    type = "dialog",
+  },
+  properties = {
+    floating = true,
+  },
+}
+
 local function init()
   require("awful.autofocus")
   awful.mouse.snap.edge_enabled = false
 
   awful.rules.rules = {
     general_rule,
+    dialog_rule,
   }
 
   client.connect_signal("mouse::enter", function(client)
