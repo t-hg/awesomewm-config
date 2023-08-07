@@ -153,6 +153,12 @@ local global_key_bindings = gears.table.join(
   end),
   awful.key({ "Mod1" }, "p", function()
     panel.toggle(awful.screen.focused())
+  end),
+  awful.key({ "Mod1" }, "m", function()
+    awful.tag.selected().layout = awful.layout.suit.max
+  end),
+  awful.key({ "Mod1" }, "t", function()
+    awful.tag.selected().layout = awful.layout.suit.tile
   end)
 )
 
