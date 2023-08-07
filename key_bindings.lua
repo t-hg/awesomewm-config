@@ -18,7 +18,6 @@ local function launcher()
     terminal_emulator,
   })
 
-  require("naughty").notify({text=table.concat(command, " ")})
   awful.spawn(command, false)
 end
 
