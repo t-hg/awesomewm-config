@@ -148,7 +148,7 @@ local global_key_bindings = gears.table.join(
     awful.screen.focus_relative(1)
   end),
   awful.key({ "Mod1" }, "r", tags.rename_selected),
-  awful.key({ "Mod1", "Shift" }, "R", function()
+  awful.key({ "Mod1", "Shift" }, "r", function()
     awful.spawn({ "awesome-client", "awesome.restart()" }, false)
   end),
   awful.key({ "Mod1" }, "p", function()
