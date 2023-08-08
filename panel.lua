@@ -2,6 +2,7 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local button_bindings = require("button_bindings")
 local wibox = require("wibox")
+local ip = require("panel_widgets.ip")
 
 local bars = {}
 
@@ -60,6 +61,7 @@ local function create(screen)
     },
     tasklist,
     {
+      ip,
       textclock,
       layout = wibox.layout.align.horizontal,
     },
