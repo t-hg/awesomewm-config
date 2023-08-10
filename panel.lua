@@ -12,17 +12,17 @@ local function create(screen)
     filter = awful.widget.taglist.filter.all,
     buttons = button_bindings.taglist_button_bindings,
     widget_template = {
+      widget = wibox.container.background,
+      id = "background_role",
       {
-        {
-          id = "text_role",
-          widget = wibox.widget.textbox,
-        },
+        widget = wibox.container.margin,
         left = 7,
         right = 7,
-        widget = wibox.container.margin,
+        {
+          widget = wibox.widget.textbox,
+          id = "text_role",
+        },
       },
-      id = "background_role",
-      widget = wibox.container.background,
     },
   })
 
@@ -31,21 +31,22 @@ local function create(screen)
     filter = awful.widget.tasklist.filter.currenttags,
     buttons = button_bindings.tasklist_button_bindings,
     widget_template = {
+      widget = wibox.container.background,
+      id = "background_role",
       {
-        {
-          id = "text_role",
-          widget = wibox.widget.textbox,
-        },
+        widget = wibox.container.margin,
         left = 7,
         right = 7,
-        widget = wibox.container.margin,
+        {
+          widget = wibox.widget.textbox,
+          id = "text_role",
+        },
       },
-      id = "background_role",
-      widget = wibox.container.background,
     },
   })
 
   local textclock = wibox.widget.textclock()
+  local systray = wibox.widget.systray()
 
   local bar = awful.wibar({
     position = "top",
@@ -55,17 +56,30 @@ local function create(screen)
   })
 
   bar:setup({
+    layout = wibox.layout.align.horizontal,
     {
-      taglist,
       layout = wibox.layout.align.horizontal,
+      taglist,
     },
     tasklist,
     {
-      ip,
-      textclock,
       layout = wibox.layout.align.horizontal,
+      {
+        widget = wibox.container.background,
+        bg = beautiful.fg_normal,
+        fg = beautiful.bg_normal,
+        {
+          widget = wibox.container.margin,
+          left = 10,
+          {
+            layout = wibox.layout.align.horizontal,
+            ip,
+            textclock,
+          },
+        },
+      },
+      systray,
     },
-    layout = wibox.layout.align.horizontal,
   })
 
   bars[screen] = bar

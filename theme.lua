@@ -4,11 +4,15 @@ local beautiful = require("beautiful")
 local theme_name = "dracula"
 local theme = gears.filesystem.get_configuration_dir() .. "themes/" .. theme_name .. "/theme.lua"
 
-local wallpaper = os.getenv("HOME") .. "/Pictures/wallpaper.jpg"
+local function set_wallpaper()
+  local wallpaper = os.getenv("HOME") .. "/Pictures/wallpaper.jpg"
+  gears.wallpaper.maximized(wallpaper)
+  screen.connect_signal("property::geometry", set_wallpaper)
+end
 
 local function init()
   beautiful.init(theme)
-  gears.wallpaper.maximized(wallpaper, nil)
+  set_wallpaper()
 end
 
 return {
