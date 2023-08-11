@@ -16,7 +16,7 @@ return {
   bg_focus = accent_color,
   bg_normal = bg_normal,
   bg_urgent = fg_normal,
-  bg_systray = accent_color,
+  bg_systray = bg_normal,
   border_focus = accent_color,
   border_normal = bg_normal,
   border_width = 2,
