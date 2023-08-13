@@ -3,6 +3,7 @@ local beautiful = require("beautiful")
 local gears = require("gears")
 local tags = require("tags")
 local panel = require("panel")
+local layouts = require("layouts")
 
 local terminal_emulator = "alacritty"
 
@@ -155,10 +156,20 @@ local global_key_bindings = gears.table.join(
     panel.toggle(awful.screen.focused())
   end),
   awful.key({ "Mod1" }, "m", function()
-    awful.tag.selected().layout = awful.layout.suit.max
+    local tag = awful.tag.selected()
+    if tag.layout == awful.layout.suit.tile then
+      tag.layout = awful.layout.suit.max
+    else
+      tag.layout = awful.layout.suit.tile
+    end
   end),
-  awful.key({ "Mod1" }, "t", function()
-    awful.tag.selected().layout = awful.layout.suit.tile
+  awful.key({ "Mod1" }, "n", function()
+    local tag = awful.tag.selected()
+    if tag.layout == awful.layout.suit.tile then
+      tag.layout = layouts.left_right
+    else
+      tag.layout = awful.layout.suit.tile
+    end
   end)
 )
 
