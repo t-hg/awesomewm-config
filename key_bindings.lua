@@ -157,18 +157,18 @@ local global_key_bindings = gears.table.join(
   end),
   awful.key({ "Mod1" }, "m", function()
     local tag = awful.tag.selected()
-    if tag.layout == awful.layout.suit.tile then
-      tag.layout = awful.layout.suit.max
-    else
+    if tag.layout == awful.layout.suit.max then
       tag.layout = awful.layout.suit.tile
+    else
+      tag.layout = awful.layout.suit.max
     end
   end),
   awful.key({ "Mod1" }, "n", function()
     local tag = awful.tag.selected()
-    if tag.layout == awful.layout.suit.tile then
-      tag.layout = layouts.left_right
-    else
+    if tag.layout == layouts.left_right then
       tag.layout = awful.layout.suit.tile
+    else
+      tag.layout = layouts.left_right
     end
   end)
 )
